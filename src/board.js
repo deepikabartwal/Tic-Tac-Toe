@@ -1,27 +1,24 @@
-import React,{Component} from 'react';
-import Square from './square'
+import React, { Component } from "react";
+import Square from "./square";
 class Board extends Component {
+  renderSquare(i) {
+    return <Square value={i} />;
+  }
 
   render() {
     return (
       <div className="board">
         <div className="board-row">
-          <Square value={1}/>
-          <Square value={2}/>
-          <Square value={3}/>
+          {this.renderSquare(1)}{this.renderSquare(2)}{this.renderSquare(3)}
         </div>
         <div className="board-row">
-				<Square value={4}/>
-				<Square value={5}/>
-				<Square value={6}/>
+          {this.renderSquare(4)}{this.renderSquare(5)}{this.renderSquare(6)}
         </div>
         <div className="board-row">
-				<Square value={7}/>
-				<Square value={8}/>
-				<Square value={9}/>
+          {this.renderSquare(7)}{this.renderSquare(8)}{this.renderSquare(9)}
         </div>
       </div>
-    );
+    )
   }
 }
 export default Board;
